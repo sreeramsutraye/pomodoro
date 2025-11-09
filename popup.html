@@ -1,79 +1,84 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>Focus Tomato</title>
     <link rel="stylesheet" href="popup.css" />
-  </head>
-  <body>
-    <div class="bg"><div class="grain"></div></div>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="grain"></div>
+    </div>
 
     <main class="card">
-      <header class="top">
-        <div class="brand">
-          <svg viewBox="0 0 64 64" class="logo" aria-hidden="true">
-            <circle cx="32" cy="36" r="22" fill="#ef4444"/>
-            <path d="M20 18c6 2 10-2 12-4c2 2 6 6 12 4c-3 5-8 7-12 7s-9-2-12-7z" fill="#16a34a"/>
-          </svg>
-          <div>
-            <h1>Focus Tomato</h1>
-            <div id="phaseChip" class="chip">Focus</div>
-          </div>
-        </div>
+        <header class="top">
+            <div class="brand">
+                <svg viewBox="0 0 64 64" class="logo" aria-hidden="true">
+                    <circle cx="32" cy="36" r="22" fill="#ef4444" />
+                    <path d="M20 18c6 2 10-2 12-4c2 2 6 6 12 4c-3 5-8 7-12 7s-9-2-12-7z" fill="#16a34a" />
+                </svg>
+                <div>
+                    <h1>Focus Tomato</h1>
+                    <div id="phaseChip" class="chip">Focus</div>
+                </div>
+            </div>
 
-        <!-- toggles settings -->
-        <button id="toggleSettings" class="icon-btn" title="Settings" aria-expanded="false">⚙️</button>
-      </header>
+            <!-- toggles settings -->
+            <button id="toggleSettings" class="icon-btn" title="Settings" aria-expanded="false">⚙️</button>
+        </header>
 
-      <section class="dial">
-        <div class="ring" id="ring">
-          <div class="ring-inner">
-            <div id="time" class="time">25:00</div>
-            <div id="subtitle" class="subtitle">Ready</div>
-          </div>
-        </div>
-      </section>
+        <section class="dial">
+            <div class="ring" id="ring">
+                <div class="ring-inner">
+                    <div id="time" class="time">25:00</div>
+                    <div id="subtitle" class="subtitle">Ready</div>
+                </div>
+            </div>
+        </section>
 
-      <section class="controls">
-        <button id="start" class="btn primary">Start</button>
-        <button id="pause" class="btn ghost">Pause</button>
-        <button id="reset" class="btn ghost">Reset</button>
-        <button id="skip" class="btn ghost" title="Skip to next phase">Skip ⏭</button>
-      </section>
+        <section class="controls">
+            <button id="start" class="btn primary">Start</button>
+            <button id="pause" class="btn ghost">Pause</button>
+            <button id="reset" class="btn ghost">Reset</button>
+            <button id="skip" class="btn ghost" title="Skip to next phase">Skip ⏭</button>
+        </section>
 
-      <section class="settings" id="settingsPanel" hidden>
-        <h2>Settings</h2>
-        <div class="row">
-          <label>
-            <span>Focus (minutes)</span>
-            <input id="focusM" type="number" min="1" />
-          </label>
-          <label>
-            <span>Short break</span>
-            <input id="shortBreakM" type="number" min="1" />
-          </label>
-          <label>
-            <span>Long break</span>
-            <input id="longBreakM" type="number" min="1" />
-          </label>
-          <label>
-            <span>Cycles before long</span>
-            <input id="cyclesBeforeLong" type="number" min="1" />
-          </label>
-        </div>
-        <div class="settings-actions">
-          <button id="saveSettings" class="btn primary small">Save</button>
-          <button id="closeSettings" class="btn ghost small">Close</button>
-        </div>
-        <p class="muted hint">Changes apply to the next start/phase.</p>
-      </section>
+        <section class="settings" id="settingsPanel" hidden>
+            <h2>Settings</h2>
+            <div class="row">
+                <label>
+                    <span>Focus (minutes)</span>
+                    <input id="focusM" type="number" min="1" />
+                </label>
+                <label>
+                    <span>Short break</span>
+                    <input id="shortBreakM" type="number" min="1" />
+                </label>
+                <label>
+                    <span>Long break</span>
+                    <input id="longBreakM" type="number" min="1" />
+                </label>
+                <label>
+                    <span>Cycles before long</span>
+                    <input id="cyclesBeforeLong" type="number" min="1" />
+                </label>
+            </div>
+            <div class="settings-actions">
+                <button id="saveSettings" class="btn primary small">Save</button>
+                <button id="closeSettings" class="btn ghost small">Close</button>
+            </div>
+            <p class="muted hint">Changes apply to the next start/phase.</p>
+        </section>
 
-      <footer class="meta">
-        <span id="cycle" class="muted">Cycle: 0</span>
-        <span id="statusDot" class="dot idle">Idle</span>
-      </footer>
+        <footer class="meta">
+            <span id="cycle" class="muted">Cycle: 0</span>
+            <span id="statusDot" class="dot idle">Idle</span>
+        </footer>
     </main>
 
     <script src="popup.js"></script>
-  </body>
+</body>
+
 </html>
