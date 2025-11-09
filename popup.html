@@ -6,20 +6,48 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <main>
-      <h1 id="phase">Focus</h1>
-      <div id="time">25:00</div>
-      <div class="buttons">
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-        <button id="reset">Reset</button>
-        <button id="skip" title="Skip to next phase">Skip ⏭</button>
-      </div>
-      <div class="meta">
-        <span id="cycle">Cycle: 0</span>
-        <a id="opts" href="#" title="Open options">⚙️ Settings</a>
-      </div>
+    <div class="bg">
+      <div class="grain"></div>
+    </div>
+
+    <main class="card">
+      <header class="top">
+        <div class="brand">
+          <!-- Inline SVG logo so we don't rely on extra files -->
+          <svg viewBox="0 0 64 64" class="logo" aria-hidden="true">
+            <circle cx="32" cy="36" r="22" fill="#ef4444"/>
+            <path d="M20 18c6 2 10-2 12-4c2 2 6 6 12 4c-3 5-8 7-12 7s-9-2-12-7z" fill="#16a34a"/>
+          </svg>
+          <div>
+            <h1>Focus Tomato</h1>
+            <div id="phaseChip" class="chip">Focus</div>
+          </div>
+        </div>
+        <a id="opts" class="icon-btn" title="Settings" cursor="pointer">Settings</a>
+      </header>
+
+      <section class="dial">
+        <div class="ring" id="ring">
+          <div class="ring-inner">
+            <div id="time" class="time">25:00</div>
+            <div id="subtitle" class="subtitle">Ready</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="start" class="btn primary">Start</button>
+        <button id="pause" class="btn ghost">Pause</button>
+        <button id="reset" class="btn ghost">Reset</button>
+        <button id="skip" class="btn ghost" title="Skip to next phase">Skip ⏭</button>
+      </section>
+
+      <footer class="meta">
+        <span id="cycle" class="muted">Cycle: 0</span>
+        <span id="statusDot" class="dot idle">Idle</span>
+      </footer>
     </main>
+
     <script src="popup.js"></script>
   </body>
 </html>
